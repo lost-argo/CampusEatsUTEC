@@ -1,8 +1,10 @@
 package org.parcial.foodorder.application;
 
 import org.modelmapper.ModelMapper;
+import org.parcial.foodorder.domain.FoodOrder;
 import org.parcial.foodorder.domain.FoodOrderService;
-import org.parcial.product.dto.PagedResponseDto;
+import org.parcial.foodorder.dto.PagedResponseDto;
+import org.springframework.data.domain.Page;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,11 +25,11 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<PagedResponseDto<ProductDto>> getAllProducts(
+    public ResponseEntity<PagedResponseDto<FoodOrder>> getAllProducts(
             @PageableDefault(page = 0, size = 10) Pageable pageable) {
 
-        Page<ProductDto> productsPage = foodOrderService.getAllProducts(pageable);
-        PagedResponseDto<ProductDto> responseDto = new PagedResponseDto<>(productsPage);
+        Page<FoodOrder> productsPage = foodOrderService.getAllProducts(pageable);
+        PagedResponseDto<FoodOrder> responseDto = new PagedResponseDto<>(productsPage);
         return ResponseEntity.ok(responseDto);
     }
 }

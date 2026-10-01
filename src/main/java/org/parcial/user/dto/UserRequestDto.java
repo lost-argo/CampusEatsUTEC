@@ -1,14 +1,11 @@
 package org.parcial.user.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
-public class UserRegisterDto {
+public class UserRequestDto {
     @NotEmpty
     String username;
     @NotBlank
@@ -18,5 +15,15 @@ public class UserRegisterDto {
     @Size(min=8)
     String password;
     @NotEmpty
-    String Role;
+    String Role = "User";
+
+    UserRequestDto() {
+    }
+    public UserRequestDto(String username, String email, String password, String Role) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.Role = Role;
+    }
+}
 }

@@ -1,4 +1,4 @@
-package org.parcial.product.dto;
+package org.parcial.foodorder.application.dto;
 
 import org.springframework.data.domain.Page;
 import java.util.List;

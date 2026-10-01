@@ -1,9 +1,9 @@
 package org.parcial.auth.application;
 
-import com.mock1.auth.components.EmailAlreadyExistsException;
-import com.mock1.auth.domain.AuthService;
-import com.mock1.auth.dto.SignInRequest;
-import com.mock1.auth.dto.SignUpRequest;
+import org.parcial.auth.components.EmailAlreadyExistsException;
+import org.parcial.auth.domain.AuthService;
+import org.parcial.auth.dto.SignInRequest;
+import org.parcial.auth.dto.SignUpRequest;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;

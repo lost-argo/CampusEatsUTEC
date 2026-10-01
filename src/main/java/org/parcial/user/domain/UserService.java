@@ -2,7 +2,7 @@ package org.parcial.user.domain;
 
 import org.modelmapper.ModelMapper;
 import org.parcial.user.dto.PagedResponseDto;
-import org.parcial.user.dto.UserRegisterDto;
+import org.parcial.user.dto.UserRequestDto;
 import org.parcial.user.infrastructure.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,7 +20,7 @@ public class UserService {
         return userRepository.findAll(pageable);
     }
 
-    public User convertirDtoAEntidad(UserRegisterDto registroDTO) {
+    public User convertirDtoAEntidad(UserRequestDto registroDTO) {
         User user = modelMapper.map(registroDTO, User.class);
         return user;
     }
